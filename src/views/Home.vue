@@ -1,8 +1,12 @@
 <template>
   <div id="nav">
-    <h2>LIMITED SALE</h2>
+    <div>
+      <h2 style=" font-size:24px;">LIMITED SALE</h2>
+      <h2 style=" font-size:28px; margin:40px">LIMITED SALE</h2>
+    </div>
+    
     <div class="div1">
-      <img src="./first.png" width="359px" height="559px" class="img" />
+      <img src="./first.png" width="380px" height="559px" class="img" />
     </div>
     <div class="div2">
       <h2 class="h2">{{ this.month }} {{ this.day }}</h2>
@@ -11,27 +15,29 @@
       <h4 class="h4">2) Max of 5 per Wallet</h4>
       <h4 class="h4">3) Reveal will happen after Public Sale</h4>
       <md-button v-on:click="minusfunction" style="display:inline-block;">
-        <md-icon class="md-size-2x float:left;" style="color: #b94242"
+        <md-icon class="md-size-1x float:left;" style="color: white;"
           >remove</md-icon
         >
       </md-button>
       <h2 style="color: #b94242; font-size: 200%; display:inline-block;" >{{ this.no_of_eth }}</h2>
       <md-button v-on:click="addfunction" style="display:inline-block;">
-        <md-icon class="md-size-2x" style="color: #b94242;">
+        <md-icon class="md-size-1x" style="color:white;">
           add
           </md-icon>
            </md-button>
+           <button  style="float:right; padding:15px 25px;background-color:#b94242; color:white;" v-on:click="max">Max</button>
            <h3 style="">PRICE : {{price[this.no_of_eth-1]}} ETH</h3>
-      <md-button
+      <button
         v-on:click="connectwallet"
-        style="color: white; background-color: #b94242;"
+        style="color: white; background-color: #b94242; padding:15px 25px; width:400px"
         id="connectbutton"
-        class="md-primary">connect wallet</md-button>
+        class="md-primary">MINT NOW</button>
       <h3>{{ this.time}}/777</h3>
     </div>
-    <div>
-      <h4>DIVINE ANARCHY. All Rights Reserved.</h4>
-    </div>
+      <h4 style="disply:inline-block;margin-top:250px">DIVINE ANARCHY. All Rights Reserved.</h4>
+      <img src="./footer.png" height="120px" width="220px" style="disply:inline-block;margin-right:800px;" /> 
+      
+      <p style="margin-top:50px; margin-right:800px; padding:20px; font-size:13px">Home     Mint      Roadmap     Team </p>
   </div>
 </template>
 
@@ -115,7 +121,10 @@ export default {
         this.time += random;
         setTimeout(this.timer,1000);
       }
+    },max(){
+      this.no_of_eth=5
     },
+
     minusfunction() {
       if (this.no_of_eth > 1) {
         this.no_of_eth -= 1;
@@ -175,7 +184,7 @@ export default {
 </script>
 <style lang="scss">
 .img {
-  background-color: black;
+  background-color:  #17161b;
 }
 .div1 {
   width: auto;
@@ -183,16 +192,19 @@ export default {
   border: 1px solid rgb(97, 92, 92);
   background-color: black(58, 56, 56);
   display: inline-block;
-  margin: 20px;
-  vertical-align: 190px;
+  vertical-align: 200px;
+  margin-right:10px ;
+  margin-top: 20px;
 }
 .div2 {
-  width: 52%;
-  height: 510px;
+  width: 485px;
+  height: 540px;
   border: 1px solid rgb(97, 92, 92);
-  background-color: rgb(22, 21, 21);
+  background-color:  #202125 ;
   display: inline-block;
-  margin: 20px;
+  padding: 33px 40px 38px;
+  margin-left: 90px;
+  margin-top: 20px;
 }
 .home {
   background-color: black;
