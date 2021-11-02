@@ -11,7 +11,7 @@
     <div class="div2">
       <h2 class="h2">{{ this.month }} {{ this.day }}</h2>
       <h3 class="h2">MINTING RULES</h3>
-      <h4 class="h4">1) 777 unique NFTs</h4>
+      <h4 class="h4">1) 500 unique NFTs</h4>
       <h4 class="h4">2) Max of 5 per Wallet</h4>
       <h4 class="h4">3) Reveal will happen after Public Sale</h4>
       <md-button v-on:click="minusfunction" style="display:inline-block;">
@@ -19,7 +19,7 @@
           >remove</md-icon
         >
       </md-button>
-      <h2 style="color: #b94242; font-size: 200%; display:inline-block;" >{{ this.no_of_eth }}</h2>
+      <h2 style="color: #b94242; font-size: 20px; display:inline-block;" >{{ this.no_of_eth }}</h2>
       <md-button v-on:click="addfunction" style="display:inline-block;">
         <md-icon class="md-size-1x" style="color:white;">
           add
@@ -32,7 +32,7 @@
         style="color: white; background-color: #b94242; padding:15px 25px; width:400px"
         id="connectbutton"
         class="md-primary">MINT NOW</button>
-      <h3>{{ this.time}}/777</h3>
+      <h3>{{ this.time}}/500</h3>
     </div>
       <h4 style="disply:inline-block;margin-top:250px">DIVINE ANARCHY. All Rights Reserved.</h4>
       <img src="./footer.png" height="120px" width="220px" style="disply:inline-block;margin-right:800px;" /> 
@@ -49,7 +49,7 @@ export default {
   data() {
     return {
       no_of_eth: 1,
-      time: 300,
+      time: 100,
       month: null,
       day: null,
       price:[0.09,0.18,0.27,0.36,0.45]
@@ -116,10 +116,10 @@ export default {
         this.no_of_eth += 1;
       }
     },timer () {
-      if (this.time <= 732) {
+      if (this.time <= 483) {
         const random = Math.floor(Math.random() * 11);
         this.time += random;
-        setTimeout(this.timer,1000);
+        setTimeout(this.timer,2000);
       }
     },max(){
       this.no_of_eth=5
