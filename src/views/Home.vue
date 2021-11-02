@@ -192,7 +192,7 @@ export default {
   border: 1px solid rgb(97, 92, 92);
   background-color: black(58, 56, 56);
   display: inline-block;
-  vertical-align: 200px;
+  vertical-align: 180px;
   margin-right:10px ;
   margin-top: 20px;
 }
